@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>seunome BYPASS | 2024</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            background: #000; /* Fundo preto */
+        }
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 1; /* Garante que as partículas são visíveis */
+        }
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 2;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid gray; /* Borda cinza */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            display: none;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        .button {
+            background-color: #fff;
+            border: none;
+            border-radius: 8px;
+            color: #000;
+            font-size: 18px;
+            padding: 15px 30px;
+            margin: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .button:hover {
+            background-color: #f0f0f0;
+            transform: translateY(-2px);
+        }
+        .button:active {
+            background-color: #e0e0e0;
+            transform: translateY(0);
+        }
+        .splash-screen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            font-size: 24px;
+            z-index: 2;
+            cursor: pointer;
+            user-select: none;
+            text-align: center;
+        }
+        .login-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 3;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.9);
+            border: 2px solid gray;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            display: none; /* Inicialmente oculto */
+        }
+        .login-container input {
+            display: block;
+            margin: 10px auto;
+            padding: 10px;
+            width: 80%;
+            border-radius: 5px;
+            border: 1px solid gray;
+            background: #333;
+            color: #fff;
+        }
+        .login-container button {
+            background-color: #fff;
+            border: none;
+            border-radius: 8px;
+            color: #000;
+            font-size: 18px;
+            padding: 15px 30px;
+            margin: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .login-container button:hover {
+            background-color: #f0f0f0;
+            transform: translateY(-2px);
+        }
+        .login-container button:active {
+            background-color: #e0e0e0;
+            transform: translateY(0);
+        }
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            font-size: 14px;
+            box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <div class="splash-screen" id="splash-screen">
+        <div>
+            <div>Click Here!</div>
+        </div>
+    </div>
+    <div class="login-container" id="login-container">
+        <h1>Login</h1>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="login()">Login</button>
+    </div>
+    <div class="container" id="main-container">
+        <h1>Bem-vindo!</h1>
+        <button class="button" onclick="fetch('/inject')">🎮 Inject</button>
+        <button class="button" onclick="fetch('/cleaner')">🧹 Cleaner</button>
+        <div class="spotify-player">
+            <iframe src="https://open.spotify.com/embed/track/4jvjzW7Hm0yK4LvvE0Paz9" width="300" height="80" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        </div>
+    </div>
+    <div class="footer">
+        &copy; 2024 seunomegg. Todos os direitos reservados.
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Configura as partículas
+        function initParticles() {
+            particlesJS('particles-js', {
+                "particles": {
+                    "number": {
+                        "value": 100, // Aumentado o número de partículas
+                        "density": {
+                            "enable": true,
+                            "value_area": 800
+                        }
+                    },
+                    "color": {
+                        "value": "#ffffff"
+                    },
+                    "shape": {
+                        "type": "circle",
+                        "stroke": {
+                            "width": 0,
+                            "color": "#ffffff"
+                        }
+                    },
+                    "opacity": {
+                        "value": 0.7,
+                        "random": false
+                    },
+                    "size": {
+                        "value": 4,
+                        "random": true
+                    },
+                    "line_linked": {
+                        "enable": false
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 3, // Ajustado para um movimento mais suave
+                        "direction": "none",
+                        "out_mode": "out"
+                    }
+                },
+                "interactivity": {
+                    "events": {
+                        "resize": true
+                    }
+                },
+                "retina_detect": true
+            });
+        }
+
+        // Inicializa as partículas
+        initParticles();
+
+        // Mostra a tela de login após clicar na tela de splash
+        document.getElementById('splash-screen').addEventListener('click', function() {
+            document.getElementById('splash-screen').style.display = 'none';
+            document.getElementById('login-container').style.display = 'block';
+        });
+
+        // Função de login
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            if (username === 'Admin' && password === 'Admin') {
+                document.getElementById('login-container').style.display = 'none';
+                document.getElementById('main-container').style.display = 'block';
+            } else {
+                alert('Usuário ou senha incorretos.');
+            }
+        }
+
+        // Inicialmente esconde a tela principal
+        document.getElementById('main-container').style.display = 'none';
+    </script>
+</body>
+</html>
